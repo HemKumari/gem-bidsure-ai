@@ -8,3 +8,5 @@ python-multipart
 pymupdf
 openpyxl
 reportlab
+scikit-learn==1.8.0
+joblib>=1.5,<2

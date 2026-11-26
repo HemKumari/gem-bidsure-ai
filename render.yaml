@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: gem-bidsure-api
+    runtime: docker
+    plan: free
+    region: singapore
+    rootDir: backend
+    healthCheckPath: /health
+    envVars:
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gem-bidsure-db
+          property: connectionString
+      - key: FRONTEND_ORIGIN
+        value: https://gem-bidsure-ai.vercel.app
+      - key: OPENBLAS_NUM_THREADS
+        value: "1"
+      - key: OMP_NUM_THREADS
+        value: "1"
