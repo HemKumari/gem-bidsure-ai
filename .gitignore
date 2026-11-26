@@ -1,0 +1,8 @@
+uploads/
+*.db
+.env
+.venv/
+node_modules/
+dist/
+__pycache__/
+*.pem
